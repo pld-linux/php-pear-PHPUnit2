@@ -3,8 +3,8 @@
 %define		_status		beta
 %define		_pearname	%{_class}
 
-Summary:	%{_pearname} - Regression testing framework for unit tests
-Summary(pl):	%{_pearname} - Zestaw testów regresyjnych
+Summary:	%{_pearname} - regression testing framework for unit tests
+Summary(pl):	%{_pearname} - zestaw testów regresyjnych
 Name:		php-pear-%{_pearname}
 Version:	2.0.0
 %define	_version	2.0.0beta1
@@ -22,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 PHPUnit2 is a regression testing framework used by the developer who
 implements unit tests in PHP. It is based upon JUnit, which can be
-found at http://www.junit.org/.
+found at http://www.junit.org/ .
 
 This class has in PEAR status: %{_status}.
 
@@ -30,7 +30,7 @@ This class has in PEAR status: %{_status}.
 PHPUnit2 jest zestawem testów regresyjnych u¿ywanych przez
 programistów, którzy implementuj± jednostki testowe w PHP. Jest
 bazowane na JUnit, który mo¿na znale¼æ pod adresem
-http://www.junit.org/.
+http://www.junit.org/ .
 
 Ta klasa ma w PEAR status: %{_status}.
 
