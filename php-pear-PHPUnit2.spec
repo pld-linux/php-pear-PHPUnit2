@@ -13,21 +13,21 @@ License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{_version}.tgz
 # Source0-md5:	1fd16ce40fd539abb6356e4656d10a3c
-URL:		http://pear.php.net/package/PHPUnit/
+URL:		http://pear.php.net/package/PHPUnit2/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-PHPUnit is a regression testing framework used by the developer who
+PHPUnit2 is a regression testing framework used by the developer who
 implements unit tests in PHP. It is based upon JUnit, which can be
 found at http://www.junit.org/.
 
 This class has in PEAR status: %{_status}.
 
 %description -l pl
-PHPUnit jest zestawem testów regresyjnych u¿ywanych przez developerów,
+PHPUnit2 jest zestawem testów regresyjnych u¿ywanych przez developerów,
 którzy implementuj± jednostki testowe w PHP. Jest bazowane na JUnit,
 który mo¿na znale¼æ pod adresem http://www.junit.org/.
 
