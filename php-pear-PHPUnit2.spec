@@ -1,5 +1,5 @@
 %include	/usr/lib/rpm/macros.php
-%define         _class          PHPUnit2
+%define		_class		PHPUnit2
 %define		_status		beta
 %define		_pearname	%{_class}
 
