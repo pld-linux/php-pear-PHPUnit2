@@ -4,7 +4,7 @@
 %define		_pearname	%{_class}
 
 Summary:	%{_pearname} - Regression testing framework for unit tests.
-#Summary(pl):	%{_pearname} -
+Summary(pl):	%{_pearname} - Zestaw testów regresyjnych.
 Name:		php-pear-%{_pearname}
 Version:	2.0.0
 %define	_version	2.0.0beta1
@@ -26,10 +26,12 @@ found at http://www.junit.org/.
 
 This class has in PEAR status: %{_status}.
 
-#%description -l pl
-#...
-#
-#Ta klasa ma w PEAR status: %{_status}.
+%description -l pl
+PHPUnit jest zestawem testów regresyjnych u¿ywanych przez developerów,
+którzy implementuj± jednostki testowe w PHP. Jest bazowane na JUnit,
+który mo¿na znale¼æ pod adresem http://www.junit.org/.
+
+Ta klasa ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c -n %{name}-%{_version}
