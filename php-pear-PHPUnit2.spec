@@ -23,7 +23,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 PHPUnit2 is a regression testing framework used by the developer who
 implements unit tests in PHP. It is based upon JUnit, which can be
-found at http://www.junit.org/ .
+found at <http://www.junit.org/>.
 
 In PEAR status of this package is: %{_status}.
 
@@ -31,7 +31,7 @@ In PEAR status of this package is: %{_status}.
 PHPUnit2 jest zestawem testów regresyjnych u¿ywanych przez
 programistów, którzy implementuj± jednostki testowe w PHP. Jest
 bazowane na JUnit, który mo¿na znale¼æ pod adresem
-http://www.junit.org/ .
+<http://www.junit.org/>.
 
 Ta klasa ma w PEAR status: %{_status}.
 
