@@ -7,18 +7,18 @@ Summary:	%{_pearname} - regression testing framework for unit tests
 Summary(pl):	%{_pearname} - zestaw testów regresyjnych
 Name:		php-pear-%{_pearname}
 Version:	2.2.0
-Release:	1
+Release:	2
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	12596f4574ffc8cee55a113a2cea3752
 URL:		http://pear.php.net/package/PHPUnit2/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	'pear(%s.php)'
+%define		_noautoreq	'pear(Log.*)'
 
 %description
 PHPUnit2 is a regression testing framework used by the developer who
@@ -36,29 +36,18 @@ bazowane na JUnit, który mo¿na znale¼æ pod adresem
 Ta klasa ma w PEAR status: %{_status}.
 
 %prep
-%setup -q -c
+%pear_package_setup
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/{Extensions/{Log,CodeCoverage,TestDox},Framework,Runner,Tests/{Extensions/TestDox,Framework,Runner},TextUI,Util}
-
-install %{_pearname}-%{version}/Extensions/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Extensions
-install %{_pearname}-%{version}/Extensions/Log/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Extensions/Log
-install %{_pearname}-%{version}/Extensions/CodeCoverage/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Extensions/CodeCoverage
-install %{_pearname}-%{version}/Extensions/TestDox/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Extensions/TestDox
-install %{_pearname}-%{version}/Framework/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Framework
-install %{_pearname}-%{version}/Runner/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Runner
-install %{_pearname}-%{version}/Tests/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Tests
-install %{_pearname}-%{version}/Tests/Extensions/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Tests/Extensions/
-install %{_pearname}-%{version}/Tests/Extensions/TestDox/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Tests/Extensions/TestDox/
-install %{_pearname}-%{version}/Tests/Framework/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Tests/Framework
-install %{_pearname}-%{version}/Tests/Runner/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Tests/Runner
-install %{_pearname}-%{version}/TextUI/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/TextUI
-install %{_pearname}-%{version}/Util/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/Util
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
+%pear_package_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc install.log optional-packages.txt
+%{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}
