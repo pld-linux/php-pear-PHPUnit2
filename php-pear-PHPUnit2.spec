@@ -6,18 +6,22 @@
 Summary:	%{_pearname} - regression testing framework for unit tests
 Summary(pl):	%{_pearname} - zestaw testów regresyjnych
 Name:		php-pear-%{_pearname}
-Version:	2.2.1
-Release:	2
+Version:	2.3.0
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	1ca5f73abbb65c5cce8458aa7af74e78
+# Source0-md5:	bee828819c6e43f18a7f36d4198ecce8
 URL:		http://pear.php.net/package/PHPUnit2/
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-common >= 3:5.0.2
+Requires:	php-dom
 Requires:	php-pcre
 Requires:	php-pear
 Requires:	php-pear-Benchmark
+Requires:	php-pear-Console_Getopt
+Requires:	php-pear-PEAR
+Requires:	php-spl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,6 +42,19 @@ bazowane na JUnit, który mo¿na znale¼æ pod adresem
 
 Ta klasa ma w PEAR status: %{_status}.
 
+%package tests
+Summary:	Tests for PEAR::%{_pearname}
+Summary(pl):	Testy dla PEAR::%{_pearname}
+Group:		Development
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+AutoReq:	no
+
+%description tests
+Tests for PEAR::%{_pearname}.
+
+%description tests -l pl
+Testy dla PEAR::%{_pearname}.
+
 %prep
 %pear_package_setup
 
@@ -54,3 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc install.log optional-packages.txt
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/%{_class}
+
+%files tests
+%defattr(644,root,root,755)
+%{php_pear_dir}/tests/*
