@@ -21,7 +21,7 @@ Requires:	php-pcre
 Requires:	php-pear
 Requires:	php-pear-Benchmark
 Requires:	php-pear-Console_Getopt
-Requires:	php-pear-PEAR
+Requires:	php-pear-PEAR-core
 Requires:	php-spl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
