@@ -14,6 +14,7 @@ Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	5feb0c65f72a38b0d37f09abddd87f16
 URL:		http://pear.php.net/package/PHPUnit2/
+BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-common >= 3:5.0.2
 Requires:	php-dom
