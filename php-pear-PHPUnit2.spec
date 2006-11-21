@@ -2,12 +2,11 @@
 %define		_class		PHPUnit2
 %define		_status		stable
 %define		_pearname	%{_class}
-
 Summary:	%{_pearname} - regression testing framework for unit tests
 Summary(pl):	%{_pearname} - zestaw testów regresyjnych
 Name:		php-pear-%{_pearname}
 Version:	2.3.6
-Release:	1
+Release:	2
 Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
@@ -17,14 +16,14 @@ URL:		http://pear.php.net/package/PHPUnit2/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
+Requires:	php(dom)
+Requires:	php(pcre)
+Requires:	php(spl)
 Requires:	php-common >= 3:5.0.2
-Requires:	php-dom
-Requires:	php-pcre
 Requires:	php-pear
 Requires:	php-pear-Benchmark
 Requires:	php-pear-Console_Getopt
 Requires:	php-pear-PEAR-core
-Requires:	php-spl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
