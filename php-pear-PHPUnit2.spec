@@ -1,12 +1,11 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		PHPUnit2
 %define		_status		stable
-%define		_pearname	%{_class}
+%define		_pearname	PHPUnit2
 Summary:	%{_pearname} - regression testing framework for unit tests
 Summary(pl.UTF-8):	%{_pearname} - zestaw testów regresyjnych
 Name:		php-pear-%{_pearname}
 Version:	2.3.6
-Release:	7
+Release:	8
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -25,10 +24,11 @@ Requires:	php-pear-PEAR-core
 Requires:	php-spl
 Suggests:	php-pear-Log
 Suggests:	php-xdebug
+Obsoletes:	php-pear-PHPUnit2-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	'pear(Log.*)'
+%define		_noautoreq	pear(Log.*)
 
 %description
 PHPUnit2 is a regression testing framework used by the developer who
@@ -44,20 +44,6 @@ bazowane na JUnit, który można znaleźć pod adresem
 <http://www.junit.org/>.
 
 Ta klasa ma w PEAR status: %{_status}.
-
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-Requires:	%{name} = %{version}-%{release}
-AutoProv:	no
-AutoReq:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
 
 %prep
 %pear_package_setup
@@ -81,11 +67,5 @@ fi
 %defattr(644,root,root,755)
 %doc install.log optional-packages.txt
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/%{_class}
+%{php_pear_dir}/PHPUnit2
 %attr(755,root,root) %{_bindir}/phpunit
-
-%if 0
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/*
-%endif
