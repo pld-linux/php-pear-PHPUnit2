@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		stable
 %define		_pearname	PHPUnit2
 Summary:	%{_pearname} - regression testing framework for unit tests
